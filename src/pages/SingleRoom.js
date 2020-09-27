@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import defaultBcg from "../images/lappys/dellCollection.jpg";
-import Hero from "../components/Hero";
 import {MdCall} from 'react-icons/md'
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
@@ -43,7 +42,7 @@ export default class SingleRoom extends Component {
       memory,
       images
     } = room;
-    const [main, ...defaultImages] = images;
+    const [...defaultImages] = images;
 
     return (
       <>

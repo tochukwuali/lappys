@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import defaultBcg from "../images/room-1.jpeg";
+import defaultBcg from "../images/lappys/dellCollection.jpg";
 import Hero from "../components/Hero";
+import {MdCall} from 'react-icons/md'
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
@@ -9,7 +10,6 @@ import StyledHero from "../components/StyledHero";
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
       defaultBcg: defaultBcg
@@ -27,9 +27,9 @@ export default class SingleRoom extends Component {
     if (!room) {
       return (
         <div className="error">
-          <h3> no such room could be found...</h3>
+          <h3> no such device could be found...</h3>
           <Link to="/rooms" className="btn-primary">
-            back to rooms
+            back to devices
           </Link>
         </div>
       );
@@ -37,23 +37,20 @@ export default class SingleRoom extends Component {
     const {
       name,
       description,
-      capacity,
-      size,
+      storage,
+      screensize,
       price,
-      extras,
-      breakfast,
-      pets,
+      memory,
       images
     } = room;
     const [main, ...defaultImages] = images;
-    console.log(defaultImages);
 
     return (
       <>
         <StyledHero img={images[0] || this.state.defaultBcg}>
-          <Banner title={`${name} room`}>
+          <Banner title={`${name}`}>
             <Link to="/rooms" className="btn-primary">
-              back to rooms
+              back to devices
             </Link>
           </Banner>
         </StyledHero>
@@ -70,23 +67,24 @@ export default class SingleRoom extends Component {
             </article>
             <article className="info">
               <h3>info</h3>
-              <h6>price : ${price}</h6>
-              <h6>size : {size} SQFT</h6>
+              <h6>price : N{price}</h6>
+              <h6>screen size : {screensize} inches </h6>
               <h6>
-                max capacity :
-                {capacity > 1 ? `${capacity} people` : `${capacity} person`}
+                storage :
+                {storage}
               </h6>
-              <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
-              <h6>{breakfast && "free breakfast included"}</h6>
+              <h6>RAM: {memory} </h6>
+              
             </article>
           </div>
         </section>
         <section className="room-extras">
-          <h6>extras </h6>
+          <h6>Call us today </h6>
           <ul className="extras">
-            {extras.map((item, index) => (
+            {/* {extras.map((item, index) => (
               <li key={index}>- {item}</li>
-            ))}
+            ))} */}
+            <li><MdCall /> (+234) 07067408738</li>
           </ul>
         </section>
       </>

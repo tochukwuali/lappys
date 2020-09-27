@@ -1,32 +1,37 @@
 import React, { Component } from "react";
-import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
+import {
+  MdDirectionsBike,
+  MdBusinessCenter,
+  MdViewDay,
+  MdCardTravel
+} from "react-icons/md";
 import Title from "./Title";
 export default class Services extends Component {
   state = {
     services: [
       {
-        icon: <FaCocktail />,
-        title: "Free Cocktails",
+        icon: <MdBusinessCenter />,
+        title: "Free Consultation",
         info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?"
+          "Our team of experienced individuals will walk you through the pros and cons of which ever device you chose. They'll offer exprt advice on the device that will match your needs "
       },
       {
-        icon: <FaHiking />,
-        title: "Endless Hiking",
+        icon: <MdCardTravel />,
+        title: "Discounts",
         info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?"
+          "We offer discount on the products that we sell. We bear in mind that all fingers are not equal and we are commited to providing an affordable price for our customers. This we do via discount offerings."
       },
       {
-        icon: <FaShuttleVan />,
-        title: "Free Shuttle",
+        icon: < MdViewDay/>,
+        title: "6 months Warranty",
         info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?"
+          "We ensure that your laptop serves you well within the first 6 months and offer specialised exchange and repair services in that regard."
       },
       {
-        icon: <FaBeer />,
-        title: "Strongest Beer",
+        icon: <MdDirectionsBike />,
+        title: "Free Delivery",
         info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?"
+          "We deliver to any location within Nigeria free of charge. Delivery outside of Nigeria may incure costs depending on the distance of the place from Nigeria."
       }
     ]
   };

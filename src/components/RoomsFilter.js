@@ -12,19 +12,19 @@ const RoomsFilter = ({ rooms }) => {
   const context = useContext(RoomContext);
   const {
     handleChange,
-    type,
-    capacity,
+    opsys,
+    storage,
+   
     price,
     minPrice,
     maxPrice,
     minSize,
     maxSize,
-    breakfast,
-    pets
+   
   } = context;
 
   // get unique types
-  let types = getUnique(rooms, "type");
+  let types = getUnique(rooms, "opsys");
   // add all
   types = ["all", ...types];
   // map to jsx
@@ -34,7 +34,7 @@ const RoomsFilter = ({ rooms }) => {
     </option>
   ));
   // get unique capacity
-  let people = getUnique(rooms, "capacity");
+  let people = getUnique(rooms, "storage");
   people = people.map((item, index) => (
     <option key={index} value={item}>
       {item}
@@ -42,17 +42,17 @@ const RoomsFilter = ({ rooms }) => {
   ));
   return (
     <section className="filter-container">
-      <Title title="search rooms" />
+      <Title title="search devices" />
       <form className="filter-form">
         {/* select type */}
         <div className="form-group">
-          <label htmlFor="type">room type</label>
+          <label htmlFor="type">device OS</label>
           <select
             name="type"
             id="type"
             onChange={handleChange}
             className="form-control"
-            value={type}
+            value={opsys}
           >
             {types}
           </select>
@@ -60,13 +60,13 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of select type */}
         {/* guests  */}
         <div className="form-group">
-          <label htmlFor="capacity">Guests</label>
+          <label htmlFor="capacity"></label>
           <select
             name="capacity"
             id="capacity"
             onChange={handleChange}
             className="form-control"
-            value={capacity}
+            value={storage}
           >
             {people}
           </select>
@@ -74,7 +74,7 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of guests */}
         {/* room price */}
         <div className="form-group">
-          <label htmlFor="price">room price ${price}</label>
+          <label htmlFor="price">device price N{price}</label>
           <input
             type="range"
             name="price"
@@ -89,7 +89,7 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of room price*/}
         {/* size */}
         <div className="form-group">
-          <label htmlFor="price">room size </label>
+          <label htmlFor="price">device screen size </label>
           <div className="size-inputs">
             <input
               type="number"
@@ -109,7 +109,7 @@ const RoomsFilter = ({ rooms }) => {
         </div>
         {/* end of select type */}
         {/* extras */}
-        <div className="form-group">
+        {/* <div className="form-group">
           <div className="single-extra">
             <input
               type="checkbox"
@@ -129,7 +129,7 @@ const RoomsFilter = ({ rooms }) => {
             />
             <label htmlFor="breakfast">pets</label>
           </div>
-        </div>
+        </div> */}
         {/* end of extras type */}
       </form>
     </section>

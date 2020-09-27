@@ -11,6 +11,7 @@
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
   --mainTransition: all 0.3s linear;
+  --footerbg: #425664;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -20,7 +21,7 @@ body {
   padding-top: 66px;
   color: var(--mainBlack);
   background: var(--mainWhite);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1.4;
 }
 h1 {
@@ -101,6 +102,9 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
+.header {
+  margin-top: 8px;
+}
 .nav-btn {
   background: transparent;
   border: none;
@@ -159,13 +163,13 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  background: url("./images/lappys/dellCollection.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .roomsHero {
-  background-image: url("./images/room-2.jpeg");
+  background-image: url("./images/lappys/dellCollection.jpg");
   min-height: 60vh;
 }
 /* End of Hero */
@@ -296,6 +300,24 @@ h6 {
   }
 }
 /* end pf featured rooms */
+
+/* Beginning of Footer */
+    .footer {
+      height: 70px;
+      background-color: var(--footerbg);
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    .footer-text {
+      margin: auto;
+       text-align: center;
+    }
+/* End of Footer */
 /* room */
 .room {
   box-shadow: var(--lightShadow);
